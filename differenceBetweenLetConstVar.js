@@ -29,12 +29,27 @@ console.log(i);
 const names=[] ;
 names.push(“1”) ;
 console.log (names) ;
+
+//在if 中
+
+if(true){
+    var foo = 'foo'
+    let foo2 = 'foo2'
+}
+
+console.log(foo) //foo
+console.log(foo2) //unreference error foo2 is undefined
+
+//const 必须初始化
+//const 不能整个的修改掉 但是可以改一部分
 //我们创建了一个拥有常量索引的数组变量，然后添加值到这个数组中，但是并不改变它的索引，所以上面的代码完全可以运行。 
 //但是当我们想修改索引到一个新的数组中，就会产生一个错误TypeError：
 
 //数组
 const names = [ ] ;
-names=[];//Uncaught TypeError: Assignment to constant variable.
+names=[];
+//Uncaught TypeError: Assignment to constant variable.
 //number或String
 const i=1;
-i=2;//Uncaught TypeError: Assignment to constant variable.
+i=2;
+//Uncaught TypeError: Assignment to constant variable.
