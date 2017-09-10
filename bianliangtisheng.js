@@ -12,3 +12,25 @@ function fn () {
 }
 fn();
 ``
+
+二、函数提升
+
+　　js中创建函数有两种方式：函数声明式和函数字面量式。只有函数声明才存在函数提升！如:
+
+1
+2
+3
+4
+console.log(f1); // function f1() {}   
+console.log(f2); // undefined  
+function f1() {}
+var f2 = function() {}
+　　只所以会有以上的打印结果，是由于js中的函数提升导致代码实际上是按照以下来执行的：
+
+1
+2
+3
+function f1() {} // 函数提升，整个代码块提升到文件的最开始<br>　　　　　console.log(f1);   
+console.log(f2);   
+var f2 = function() {}
+
