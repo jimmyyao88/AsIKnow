@@ -1,0 +1,65 @@
+http://www.qdfuns.com/notes/17660/7f82003c5ce92d39d19d6be0403f3f3b.html
+
+基本类型 string number null undefined boolean
+1.基本类型的值是不可变得：
+
+任何方法都无法改变一个基本类型的值，比如一个字符串：
+var name = 'jozo';
+name.toUpperCase(); // 输出 'JOZO'
+console.log(name); // 输出  'jozo'
+
+2.基本类型的比较是值的比较
+var a = 1;
+var b = true;
+console.log(a == b);//true
+
+3.基本类型的变量是存放在栈区的（栈区指内存里的栈内存）
+
+引用类型 除了 基本类型 其他都是引用类型
+
+1.引用类型的值是可变的
+
+2.引用类型的值是同时保存在栈内存和堆内存中的对象 (标识符放在栈里 ， 具体内容放在堆里，且标识符的栈内存会对应一个堆内存的地址)
+
+3.引用类型的比较是引用的比较
+  var person1 = {};
+  var person2 = {};
+  console.log(person1 == person2); // false
+  引用类型时按引用访问的，换句话说就是比较两个对象的堆内存中的地址是否相同，那很明显，person1和person2在堆内存中地址是不同的
+4.对象引用
+  var a = {}; // a保存了一个空对象的实例
+  var b = a;  // a和b都指向了这个空对象
+
+  a.name = 'jozo';
+  console.log(a.name); // 'jozo'
+  console.log(b.name); // 'jozo'
+
+  b.age = 22;
+  console.log(b.age);// 22
+  console.log(a.age);// 22
+
+  console.log(a == b);// true
+
+
+
+
+
+
+js中为什么true=='1'为真，而true=="true"为假？
+谢邀，因为在 ES 5 中，以上代码实际上是这样的过程：true == "1";
+==>toNumber(true) == "1";
+==>1 == "1";
+==>1 == toNumber("1");
+==>1 == 1;
+==> true
+
+true == "true"
+==>toNumber(true) == "true";
+==>1 == toNumber("true");
+==>1 == NaN;
+==>false
+
+作者：星坠西园
+链接：https://www.zhihu.com/question/48609760/answer/119150278
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
